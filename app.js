@@ -22,9 +22,6 @@ app.use("/",contact);
 // console.log(process.env.PORT);
 const PORT = process.env.PORT || 8000
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static("client/build"));
-}
 
 
 app.listen(PORT,
