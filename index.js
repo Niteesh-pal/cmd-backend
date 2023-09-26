@@ -9,6 +9,18 @@ dotenv.config();
 
 const app = express();
 
+app.options('*', (req, res) => {
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', 'https://cms-frontend-chi.vercel.app/');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    // Respond with a 200 status for preflight requests
+    res.sendStatus(200);
+});
+
+mongoose.set('strictQuery', false);
+
 
 //middlewares
 app.use(cors());
