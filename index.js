@@ -18,6 +18,10 @@ app.use(express.json());
 //routes
 app.use("/",contact);
 
+app.get("/",(req,res)=>{
+    res.send("working");
+})
+
 //server configuration
 // console.log(process.env.PORT);
 const PORT = process.env.PORT || 8000
